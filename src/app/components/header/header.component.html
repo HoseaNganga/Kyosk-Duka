@@ -1,0 +1,26 @@
+<nav class="bg-yellow-400 p-4">
+  <div class="flex justify-between gap-2 items-center">
+    <h1
+      class="font-bold text-base text-white cursor-pointer sm:text-lg md:text-2xl"
+    >
+      <a routerLink="/" href="/" routerLinkActive="active">Kyosk</a>
+    </h1>
+    <app-form></app-form>
+    <div class="flex justify-between gap-2 items-center">
+      <button
+        class="bg-yellow-600 text-white sm:px-4 sm:py-2 hover:bg-yellow-900 font-semibold rounded-md cursor-pointer px-2 py-1"
+      >
+        Login
+      </button>
+      <div class="relative">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span
+          class="w-6 absolute top-[-19px] right-[-10px] h-6 text-sm font-bold bg-green-400 p-2 rounded-full flex place-items-center text-white"
+          >2</span
+        >
+      </div>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
