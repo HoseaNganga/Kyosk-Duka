@@ -1,0 +1,55 @@
+<div class="relative w-full mt-6 p-4">
+  <div class="flex justify-start items-center gap-2 relative">
+    <div>
+      <button
+        class="flex items-center gap-2 bg-yellow-400 md:p-4 sm:p-[3] rounded-md p-2"
+        (click)="toggleCategories()"
+      >
+        <i class="fa-solid fa-bars text-[12px] sm:text-[24px]"></i>
+        <span
+          class="font-semibold text-nowrap text-[10px] sm:text-[14px] md:text-[16px]"
+          >All Categories</span
+        >
+        <i *ngIf="isOpen" class="fa-solid fa-angle-up text-[12px]"></i>
+        <i *ngIf="!isOpen" class="fa-solid fa-angle-down text-[12px]"></i>
+      </button>
+      <div
+        class="absolute left-0 top-full p-3 w-[176px] rounded-md bg-slate-100 shadow z-50"
+        *ngIf="isOpen && categories"
+      >
+        <ul>
+          <li
+            *ngFor="let category of categories"
+            class="p-2 text-nowrap hover:bg-yellow-400 rounded-md grid place-items-center"
+          >
+            {{ category?.title }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Swiper main container -->
+    <div #swiperContainer class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide" *ngFor="let category of categories">
+          <div
+            class="bg-slate-200 p-2 text-[10px] sm:text-[14px] rounded-md grid place-items-center text-nowrap font-semibold hover:bg-yellow-400 cursor-pointer ml-6"
+          >
+            {{ category.title }}
+          </div>
+        </div>
+      </div>
+
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+  </div>
+</div>

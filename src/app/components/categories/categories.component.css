@@ -1,0 +1,17 @@
+:host ::ng-deep .swiper {
+  width: 100%;
+  height: auto;
+}
+
+:host ::ng-deep .swiper-slide {
+  display: flex;
+  align-items: center;
+}
+
+:host ::ng-deep .swiper-button-next::after,
+:host ::ng-deep .swiper-button-prev::after {
+  font-size: 20px;
+}
+:host ::ng-deep .swiper-button-prev {
+  left: 1px;
+}
